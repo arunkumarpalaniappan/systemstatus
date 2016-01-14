@@ -1,9 +1,9 @@
 <?php
 include 'php/PHPMailerAutoload.php';
 $status = false;
-$GLOBALS['host'] = "54.169.248.213";
+$GLOBALS['host'] = "your ip goes here";
 $GLOBALS['ms'] = 0;
-$GLOBALS['port'] = 3389;
+$GLOBALS['port'] = your port goes here;
 $GLOBALS['oldstatus']=getstatus();
 sendmail(getstatus());
 checkStatus();
