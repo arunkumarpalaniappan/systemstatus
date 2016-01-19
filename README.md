@@ -20,3 +20,11 @@ $mail->setFrom('your from address goes here', 'your from name goes here');
 $mail->addReplyTo('your reply to address goes here', 'your reply to name goes here');
 $mail->addAddress('your email address goes here', 'your name goes here');
 </pre>
+
+
+#contribute
+Contributions to systemstatus are welcome. Here is how you can contribute to systemstatus:
+
+<a href='https://github.com/arunkumarpalaniappan/systemstatus/issues'> Submit bugs</a> and verify issues.
+
+<a href='https://github.com/arunkumarpalaniappan/systemstatus/pulls'> Submit pull requests</a>  for bug fixes and features and discuss existing proposals.
