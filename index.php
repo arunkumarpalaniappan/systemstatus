@@ -1,23 +1,23 @@
 <?php
-include 'php/PHPMailerAutoload.php';
-$status = false;
-$GLOBALS['host'] = "your ip goes here";
-$GLOBALS['ms'] = 0;
-$GLOBALS['port'] = your port goes here;
-$GLOBALS['oldstatus']=getstatus();
-sendmail(getstatus());
-checkStatus();
+include 'php/PHPMailerAutoload.php'; //import PHPMailer for SMTP
+$status = false; //initialize status as false to send emails periodically
+$GLOBALS['host'] = "your ip goes here"; //replace your host here eg. 192.168.x.x
+$GLOBALS['ms'] = 0; //initialize time to zero
+$GLOBALS['port'] = your port goes here; //replace with your port eg. 80,587,8080,etc
+$GLOBALS['oldstatus']=getstatus(); //obtaining current status
+sendmail(getstatus()); //send initial status
+checkStatus(); //call function to check status
 function checkStatus()
 {
   $status=getstatus();
-  if($GLOBALS['oldstatus']!=$status)
+  if($GLOBALS['oldstatus']!=$status) //call send email function with status
   {
    sendmail($status);
    $GLOBALS['oldstatus']=$status;
  }
-   checkStatus();
+   checkStatus();//calling check status recursively
 }
-function getstatus()
+function getstatus() //function to check and return status 
 {
       $host = $GLOBALS['host']; 
       $port = $GLOBALS['port'];
@@ -33,7 +33,7 @@ function getstatus()
       $GLOBALS['ms'] = $mstime;
       return $responding;
 }
-function sendmail($status)
+function sendmail($status) //send email using PHP Mailer
 {
   if($status)
    {
