@@ -21,7 +21,7 @@ function getstatus() //function to check and return status
 {
       $host = $GLOBALS['host']; 
       $port = $GLOBALS['port'];
-      $timeout = 10; 
+      $timeout = 10; //change timeout accordingly
       $tbegin = microtime(true);  
       $fp = fsockopen($host, $port, $errno, $errstr, $timeout);  
       $responding = 1;
